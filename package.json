@@ -1,0 +1,19 @@
+{
+  "name": "as3_tapestationery_submission",
+  "version": "1.0.0",
+  "description": "assignment 3 - Web Development and Design",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ejs": "*",
+    "body-parser": "*",
+    "express-validator": "*",
+    "mongoose": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhishek Sawant, 8683623",
+  "license": "ISC"
+}

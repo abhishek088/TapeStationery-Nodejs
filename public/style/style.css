@@ -1,0 +1,140 @@
+/*Author: Abhishek Sawant, 8683623*/
+
+form{
+    width: 600px;
+    height: auto;
+    padding: 30px;
+    border: 2px solid black;
+    box-shadow: 0 0 10px black;
+    margin: 30px auto;
+    text-align: left;
+    background-color: rgba(79, 11, 240, 0.2);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(253, 255, 124);
+}
+header{
+    text-align: center;
+}
+.field{
+    margin: 10px;
+}
+.field label{
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-left: 20px;
+    width: 140px;
+    text-align: right;
+}
+.field input, .field select{
+    width: 60%; 
+    padding: 5px; 
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 4px; 
+    margin-bottom: 10px;
+    margin-left: 2px;
+}
+#buttons{
+    width: auto;
+    text-align: center;
+    margin: 10px;
+}
+#buttons input{
+    display: inline-block;
+    font-size: 16px;
+    padding: 3px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+.formData{
+    width: 600px;
+    border: 2px solid black;
+    box-shadow:0 0 10px black;
+    padding: 30px;
+    margin:30px auto;
+    color: white;
+    background-color: rgba(79, 11, 240, 0.2);
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#errors{
+    color: red;
+    font-size: 85%;
+    font-weight: Bold;
+    text-align: center;
+}
+.formResult{
+    color: black;
+    font-size: 110%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+}
+#billx{
+    color: black;
+    font-size: 120%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+header{
+    width: 660px;
+    margin: 0 auto;
+}
+#nav_menu{
+    background-color: rgba(79, 11, 240, 0.2);
+    border: 2px solid black;
+    box-shadow: 0 0 10px #2c2c2c;
+    color: white;
+    border-radius: 5px;
+}
+
+#nav_menu ul{
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+}
+
+#nav_menu ul li{
+    display: inline-block;
+    width: 130px;
+}
+
+#nav_menu ul li:hover{
+    background-color: rgb(253, 255, 124);
+}
+#nav_menu ul li a{
+    color: black;
+    font-size: 120%;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+}
+
+#allOrdersTable{
+    border: 2px solid black;
+    box-shadow: 0 0 10px black;
+    border-collapse: collapse;
+    margin: 30px auto;
+    color: Black;
+    border-radius: 5px;
+    background-color: rgba(79, 11, 240, 0.2);
+}
+#allOrdersTable td{
+    border-left: 2px solid black;
+    border-bottom: 1px solid black;
+    padding: 3px;
+}
+#allOrdersTable th{
+    font-size: 110%;
+}
+
+#allOrdersTable th{
+    border: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 3px;
+}

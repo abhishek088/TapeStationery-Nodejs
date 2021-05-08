@@ -1,0 +1,40 @@
+<!--Author: Abhishek Sawant, 8683623-->
+
+<%- include('layouts/header'); -%>
+    <main>
+        <table id="allOrdersTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Pen</th>
+                    <th>Qty of Pen</th>
+                    <th>Book</th>
+                    <th>Qty of Book</th>
+                    <th>Total Cost</th>
+                    <th>Tax</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% 
+                    for(var order of orders){
+                    %>
+                    <tr>
+                        <td><%= order.name %></td>
+                        <td><%= order.email %></td>
+                        <td><%= order.phone %></td>
+                        <td><%= order.pen %></td>
+                        <td><%= order.qty1 %></td>
+                        <td><%= order.books %></td>
+                        <td><%= order.qty2 %></td>
+                        <td>$<%= order.bill.toFixed(2) %></td>
+                        <td>$<%= order.tax.toFixed(2) %></td>
+                    </tr>
+                    <%
+                    }
+                %>
+            </tbody>
+        </table>
+    </main>
+<%- include('layouts/footer'); -%>

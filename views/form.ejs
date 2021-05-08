@@ -1,0 +1,145 @@
+<!--Author: Abhishek Sawant, 8683623-->
+
+<%- include('layouts/header'); -%>
+    <main>
+        <form name="purchaseForm" method="POST" onsubmit="return submitForm();" action="">
+            <!--login fieldset-->
+            <fieldset class="field" id="login">
+                <legend><h2>Login Details</h2></legend>
+                <label for="name">Name</label>
+                <input id="name" placeholder="Enter your full name" type="text" name="name"><br/>
+                <label for="email">Email</label>
+                <input id="email" placeholder="abcde@xyz.abc" type="text" name="email"><br/>
+                <label for="password">Password</label>
+                <input id="password" placeholder="Enter your password" type="password" name="password"><br/>
+                <label for="password">Confirm Password</label>
+                <input id="confirmPassword" placeholder="Enter your password again" type="password" name="confirmPassword"><br/>
+            </fieldset>
+
+            <!--personal details fieldset-->
+            <fieldset class="field" id="personal">
+                <legend><h2>Other Personal Details</h2></legend>
+                <label for="phone">Phone Number</label>
+                <input id="phone" placeholder="999-999-9999" type="text" name="phone"><br/>
+                <label>Address</label>
+                <input name="address" placeholder="Enter your address" type="text" id="address" rows="2"></textarea><br/>
+                <label>City</label>
+                <input id="city" placeholder="Enter you city name" type="text" name="city"><br/>
+                <label>Province</label>
+                <select name="province" id="province">
+                    <option value="" disabled selected>--Select--</option>
+                    <option value="AB">AB</option>
+                    <option value="BC">BC</option>
+                    <option value="MB">MB</option>
+                    <option value="NB">NB</option>
+                    <option value="NL">NL</option>
+                    <option value="NS">NS</option>
+                    <option value="NT">NT</option>
+                    <option value="NU">NU</option>
+                    <option value="ON">ON</option>
+                    <option value="PE">PE</option>
+                    <option value="QC">QC</option>
+                    <option value="SK">SK</option>
+                    <option value="YT">YT</option>   
+                </select><br/>
+            </fieldset>
+
+            <!--product list fieldset-->
+            <fieldset class="field" id="products">
+                <legend><h2>Products</h2></legend>
+                <label>Pen</label>
+                <select name="pen" id="pen">
+                    <option value="">--Select--</option>
+                    <option value="Black Pen">Black - $5</option>
+                    <option value="Blue Pen">Blue - $5</option>
+                    <option value="Red Pen">Red - $5</option>
+                </select><br>
+                <label for="number">Quantity</label>
+                <input id="qty1" placeholder="Enter no. of pens" type="number" name="qty1"><br/>         
+                <label>Books</label>
+                <select name="books" id="books">
+                    <option value="">--Select--</option>
+                    <option value="100 Pages Book">100 Pages - $10</option>
+                    <option value="200 Pages Book">200 Pages - $20</option>
+                </select><br>
+                <label for="number">Quantity</label>
+                <input id="qty2" placeholder="Enter no. of books" type="number" name="qty2"><br/>
+            </fieldset>
+
+            <!--payment details fieldset-->
+            <fieldset class="field" id="payment">
+                <legend><h2>Payment Details</h2></legend>
+                <label for="select">Payment Options</label>
+                <select name="paymentMethod" id="paymentMethod">
+                    <option value="">--Select--</option>
+                    <option value="credit">Credit</option>
+                    <option value="debit">Debit</option>
+                </select><br/>
+                <label for="text">Card Number</label>
+                <input id="credit1" placeholder="xxxx-xxxx-xxxx-xxxx" type="text" name="credit1"><br/>
+            </fieldset>
+
+            <!--buttons fieldset-->
+            <fieldset id="buttons">
+                <input type="submit" value="Submit" id="submit">
+            </fieldset> 
+
+            <!--paragraph to show all errors-->
+            <%
+                if(typeof(errors) != 'undefined'){
+                    for(var error of errors){
+                        %>
+                        <p id="errors"><%= error.msg %></p>
+                        <%
+                    }
+                }
+            %>
+        </form>
+
+        <!--division for showing bill-->
+        <div class="formData">
+            <p id="billx">Final Receipt</p>
+            <% 
+                if(typeof(bill) != 'undefined' && bill > 10){
+                    %>
+                    <table class="formResult">
+                        <tr>
+                            <th>Name: </th>
+                            <td><%= name %></td>
+                        </tr>
+                        <tr>
+                            <th>Email Address: </th>
+                            <td><%= email %></td>
+                        </tr>
+                        <tr>
+                            <th>Phone Number: </th>
+                            <td><%= phone %></td>
+                        </tr>
+                        <tr>
+                            <th>Address: </th>
+                            <td><%= address %>, <%= city %>, <%= province %></td>
+                        </tr>
+                        <tr>
+                            <th>Products Purchased: </th>
+                            <td><%= product %></td>
+                        </tr>
+                        <tr>
+                            <th>Total Amount: </th>
+                            <td>$<%= bill %></td>
+                        </tr>
+                        <tr>
+                            <th>Total Tax: </th>
+                            <td>$<%= tax %></td>
+                        </tr>
+                    </table>
+                    <%
+                }
+                else if(typeof(bill) != 'undefined'){
+                    %>
+                    <p class="formResult">Bill cannot be printed for orders less than $10</p> 
+                    <%  
+                }
+            %>
+          </div>
+    </main>
+<%- include('layouts/footer'); -%>
